@@ -35,14 +35,19 @@ def create_square(im_pth):
         value=color)   
     return new_im
 
-def make_prediction(model,tags,d):
+
+def make_pytorch_network_call(img_url):
+	request_data = [{
+            'img': img_url,
+            'attributes': ['all']
+        }]
+    context = zmq.Context()
+	socket = context.socket(zmq.DEALER)
+	socket.connect(PYTORCH_SERVER)
+	socket.send_unicode(json.dumps(request_data))
+	t =  socket.recv()
+	return t
+
+def format_pytorch_results(resp):
 	temp = {}
-	pr = model.predict(d.reshape((1,3,224,224)))
-	t = 0
-	for p in pr[0]:
-		temp[tags[t]] = str(p)
-		t+=1
-	prediction = tags_to_be[np.argmax(pr)]
-	return prediction , temp
-
-
+	return temp

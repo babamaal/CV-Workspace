@@ -3,13 +3,13 @@ from settings.cv_settings import *
 from utils import *
 from common.utils import *
 
-class NeckCVObj(object):
+class PCCVObj(object):
 	def __init__(self):
 		# attributes stuffs
-		self.model = get_model_from_meta('NECKLINE')
-        self.tags = get_tags_from_meta('NECKLINE')
-    
-    
+		self.model = get_model_from_meta('PATTERN_COVERAGE')
+        self.tags = get_tags_from_meta('PATTERN_COVERAGE')
+     
+
         
     def classify_for_image(img_pth):
     	## Input pre processing here : 

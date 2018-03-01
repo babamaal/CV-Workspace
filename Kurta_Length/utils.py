@@ -46,3 +46,9 @@ def make_prediction(model,tags,d):
 	return prediction , temp
 
 
+def check_if_ankle_joint_present(img_url):
+	r = requests.get(ROI_SERVER).text
+	t = json.loads(r)
+	############# check if ankle join present in response obj ###############
+	
+	return True
