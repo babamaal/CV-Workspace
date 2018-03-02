@@ -49,14 +49,14 @@ class GlobalCVObj(object):
         #pred, debug = self.kurta_length.classify_for_image(img_pth)
         #final_pred['Kurta Length'] = pred
 
-        pred, debug = self.kurta_shape.classify_for_image(img_pth)
-        final_pred['Kurta Shape'] = pred
+        #pred, debug = self.kurta_shape.classify_for_image(img_pth)
+        #final_pred['Kurta Shape'] = pred
 
-        pred, debug = self.pattern_coverage.classify_for_image(img_pth)
-        final_pred['Pattern Coverage'] = pred
+        #pred, debug = self.pattern_coverage.classify_for_image(img_pth)
+        #final_pred['Pattern Coverage'] = pred
 
-        pred, debug = self.patterns.classify_for_image(img_pth)
-        final_pred['Patterns'] = pred
+        #pred, debug = self.patterns.classify_for_image(img_pth)
+        #final_pred['Patterns'] = pred
 
         pred, debug = self.prints.classify_for_image(img_pth)
         final_pred['Prints'] = pred
