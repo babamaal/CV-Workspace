@@ -14,6 +14,7 @@ class PYTObj(object):
     def classify_for_image(self, img_pth):
         # Input pre processing here :
         img_url = 'http://' +  MACHINE_IP +  img_pth
+        print img_url
         # Make predictions here :
         response = make_pytorch_network_call(img_url)
         # predictions = STRING (predicted value) , temp = {STRING(tag1) : STRING(probability)}
