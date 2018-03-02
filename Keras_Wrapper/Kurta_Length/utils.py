@@ -32,8 +32,8 @@ def prepare_input_for_model(path_to_image):
 
 
 def create_square(im_pth):
-    #tt = im_pth.replace('test','test11')
-    #save_path = tt
+    # tt = im_pth.replace('test','test11')
+    # save_path = tt
     im = cv2.imread(im_pth)
     old_size = im.shape[:2]  # old_size is in (height, width) format
     ratio = float(desired_size) / max(old_size)
@@ -65,8 +65,79 @@ def make_prediction(model, tags, d):
 
 
 def check_if_ankle_joint_present(img_url):
-    r = requests.get(ROI_SERVER).text
-    t = json.loads(r)
+    import zmq
+    import json
+    request_data = [{'img': img}]
+    context = zmq.Context()
+    socket = context.socket(zmq.DEALER)
+    socket.connect(cv_settings.PYTORCH_SERVER)
+    socket.send_unicode(json.dumps(request_data))
+    t = socket.recv()
     ############# check if ankle join present in response obj ###############
+    g = convert_pose_network_output(t)
+    return check_ankle(g)
 
-    return False
+
+BODY_PART_DICT = {
+    0: "Nose",
+    1: "Neck",
+    2: "RShoulder",
+    3: "RElbow",
+    4: "RWrist",
+    5: "LShoulder",
+    6: "LElbow",
+    7: "LWrist",
+    8: "RHip",
+    9: "RKnee",
+    10: "RAnkle",
+    11: "LHip",
+    12: "LKnee",
+    13: "LAnkle",
+    14: "REye",
+    15: "LEye",
+    16: "REar",
+    17: "LEar",
+    18: "Bkg"
+}
+
+POSE_COCO_PAIRS = [('Neck', 'RShoulder'), ('Neck', 'LShoulder'), ('RShoulder', 'RElbow'),
+                   ('RElbow', 'RWrist'), ('LShoulder', 'LElbow'), ('LElbow',
+                                                                   'LWrist'), ('Neck', 'RHip'), ('RHip', 'RKnee'),
+                   ('RKnee', 'RAnkle'), ('Neck', 'LHip'), ('LHip',
+                                                           'LKnee'), ('LKnee', 'LAnkle'), ('Neck', 'Nose'),
+                   ('Nose', 'REye'), ('REye', 'REar'), ('Nose', 'LEye'), ('LEye', 'LEar'), ('RShoulder', 'REar'), ('LShouder', 'LEar')]
+
+DEFINED_ROI = {
+    'right_arm': ('RShoulder', 'RElbow', 'RWrist'),
+    'left_arm': ('LShoulder', 'LElbow', 'LWrist'),
+    'shoulder_area': ('RShoulder', 'Neck', 'LShoulder'),
+    'torso': ('RShoulder', 'Neck', 'LShoulder', 'LHip', 'RHip'),
+    'bottom': ('RHip', 'LHip', 'LAnkle', 'RAnkle'),
+    'bust_area': ('RShoulder', 'Neck', 'LShoulder')
+}
+
+
+def convert_pose_network_output(json_path):
+    temp = json_path
+    if len(temp['people']) < 1:
+        return False
+    key_points = temp['people'][0]['pose_keypoints']
+    fmt_key_points = []
+    count = 0
+    for i in range(54):
+        if count + 2 < 54:
+            temp = [key_points[count],
+                    key_points[count + 1], key_points[count + 2]]
+            # print temp
+            fmt_key_points.append(temp)
+        count += 3
+    final_ret = {}
+    for i in range(18):
+        final_ret[BODY_PART_DICT[i]] = fmt_key_points[i]
+    return final_ret
+
+
+def check_ankle(final_ret):
+    if final_ret['LAnkle'][0] ! = 0.0:
+        return true
+    return false

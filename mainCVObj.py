@@ -22,7 +22,7 @@ class GlobalCVObj(object):
         self.neckline = NeckCVObj()
         self.design_styling = DSCVObj()
         #self.hemline = HemCVObj()
-        #self.kurta_length = KLCVObj()
+        self.kurta_length = KLCVObj()
         #self.pattern_coverage = PCCVObj()
         #self.patterns = PatCVObj()
         self.prints = PrintCVObj()
@@ -42,7 +42,7 @@ class GlobalCVObj(object):
         pred, debug = self.design_styling.classify_for_image(img_pth)
         final_pred['Design Styling'] = pred
 
-        #pred, debug = self.kurta_length.classify_for_image(img_pth)
+        pred, debug = self.kurta_length.classify_for_image(img_pth)
         #final_pred['Kurta Length'] = pred
 
         #pred, debug = self.pattern_coverage.classify_for_image(img_pth)

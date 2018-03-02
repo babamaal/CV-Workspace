@@ -21,9 +21,9 @@ class KLCVObj(object):
             return predictions, temp
         d = prepare_input_for_model(img_pth)
         # Make predictions here :
-        predictions , temp = make_prediction(self.model, self.tags, d)
+        predictions, temp = make_prediction(self.model, self.tags, d)
         # predictions = STRING (predicted value) , temp = {STRING(tag1) : STRING(probability)}
         # Post processing logic here : (Ensemble scoreing , voting , elimination)
-        return predictions ,temp
+        return predictions, temp
 
 
