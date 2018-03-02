@@ -26,7 +26,7 @@ META_INFO = {
     },
     "PRINTS": {
         "PATH": "/ddrive1116/Production/models/pset13_sig.h5",
-        "TAGS": [''],
+        "TAGS": ['Chevron', 'Animal', 'Embellished', 'Ethnic Motifs', 'Quirky', 'Solid', 'Abstract', 'Colourblocked', 'Tribal', 'Bandhani', 'Floral', 'Shibori', 'Striped', 'Paisley', 'Checked', 'Geometric'],
         "TYPE": 'keras'
     },
     "SLITS": {
