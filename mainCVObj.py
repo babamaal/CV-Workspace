@@ -16,7 +16,7 @@ from Keras_Wrapper.Slits.main import SlitCVObj
 from Pytorch_Wrapper.main import PYTObj
 
 
-class GlobalCVObj(Object):
+class GlobalCVObj(object):
     def __init__(self):
         # Add your objects here.. repalce the ones coming from pytorch with PYTObj
         self.neckline = NeckCVObj()
