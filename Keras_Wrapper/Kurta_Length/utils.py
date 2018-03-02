@@ -67,7 +67,7 @@ def make_prediction(model, tags, d):
 def check_if_ankle_joint_present(img_pth):
     t_r = os.listdir(POSE_NETWORK_OUTPUT)
     fname = img_pth.split('/')[-1].split('.')[0]
-    json_name = fname + '.json'
+    json_name = fname + '_keypoints.json'
     t = json.load(open(os.path.join(POSE_NETWORK_OUTPUT,json_name),'r'))
     ############# check if ankle join present in response obj ###############
     g = convert_pose_network_output(t)
