@@ -53,7 +53,7 @@ def make_prediction(model,tags,d):
 	for p in pr[0]:
 		temp[tags[t]] = str(p)
 		t+=1
-	prediction = tags_to_be[np.argmax(pr)]
+	prediction = tags[np.argmax(pr)]
 	return prediction , temp
 
 
