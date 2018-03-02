@@ -46,8 +46,8 @@ class GlobalCVObj(object):
         #pred , debug = self.hemline.classify_for_image(img_pth)
         #final_pred['Hemline'] = pred
 
-        pred, debug = self.kurta_length.classify_for_image(img_pth)
-        final_pred['Kurta Length'] = pred
+        #pred, debug = self.kurta_length.classify_for_image(img_pth)
+        #final_pred['Kurta Length'] = pred
 
         pred, debug = self.kurta_shape.classify_for_image(img_pth)
         final_pred['Kurta Shape'] = pred
