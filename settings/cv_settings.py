@@ -1,5 +1,6 @@
 MODEL_JSON_PATH = '/ddrive1116/Production/model_json_path'
 ROI_SAVE_PATH_NECK = '/ddrive1116/Production/neck_roi_path'
+POSE_NETWORK_OUTPUT = '/ddrive1116/Production/pose_out'
 IMAGE_DATA_SAVE_PATH = '/ddrive1116/Production/current_image_data_path'
 INPUT_CSV_PATH = '/ddrive1116/Production/csv_input'
 OUTPUT_JSON_PATH = '/ddrive1116/Production/json_output/output.json'

@@ -14,7 +14,7 @@ class KLCVObj(object):
 
     def classify_for_image(self,img_pth):
         # Input pre processing here :
-        roi_flag = check_if_ankle_joint_present('http://' + MACHINE_IP + img_pth)
+        roi_flag = check_if_ankle_joint_present(img_pth)
         if roi_flag:
             predictions = 'Short Length'
             temp = {}
