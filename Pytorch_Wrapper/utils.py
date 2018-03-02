@@ -10,6 +10,12 @@ def make_pytorch_network_call(img, models=['all']):
     socket.send_unicode(json.dumps(request_data))
     return socket.recv()
 
+
 def format_pytorch_results(resp):
     temp = {}
-    return resp
+    t = json.loads(resp)[0]
+    tclass = t.keys()
+    for tc in tclass:
+        if tc != 'img':
+            temp[tc] = t[tc]['pred']
+    return temp

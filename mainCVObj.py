@@ -67,6 +67,8 @@ class GlobalCVObj(object):
         pred, debug = self.slits.classify_for_image(img_pth)
         final_pred['Slits'] = pred
 
-
+        pred = self.PYTObj.classify_for_image(img_pth)
+        for i in pred.keys():
+            final_pred[i] = pred[i]
 
         return final_pred

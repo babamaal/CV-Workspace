@@ -36,10 +36,12 @@ def main(skip=0):
         count = 0
     else:
         count = skip
-    for f in files:
-        pred = gco.make_prediction_for_one_image(f)
-        out[f] = pred
-        count += 1
-        print "Done with : ", count
+    for l in range(files):
+        f = files[l]
+        if l > count:
+            pred = gco.make_prediction_for_one_image(f)
+            out[f] = pred
+            count += 1
+            print "Done with : ", count
     json.dump(out, open(OUTPUT_JSON_PATH, 'w'))
     return "DONE WITH THE CSV!!!"
