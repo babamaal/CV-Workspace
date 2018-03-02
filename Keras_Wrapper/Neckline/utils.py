@@ -3,6 +3,9 @@ desired_size = 224
 from model_meta.meta_file import *
 import os
 os.environ['PATH'] = "/home/ubuntu/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-8.0/bin:/snap/bin:/usr/local/cuda-8.0/bin:/home/ubuntu/codes/caffe/build/tools:/usr/local/cuda-8.0/bin:/usr/local/cuda-8.0/lib64"
+import keras 
+from keras.preprocessing import image
+from keras.models import Model
 
 def prepare_input_for_model(path_to_image):
 	if not os.path.isfile(path_to_image):
