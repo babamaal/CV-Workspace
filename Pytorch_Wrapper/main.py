@@ -2,7 +2,7 @@ from model_meta.meta_file import *
 from settings.cv_settings import *
 from utils import *
 from common.utils import *
-
+import urllib
 
 class PYTObj(object):
     def __init__(self):
