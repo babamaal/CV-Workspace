@@ -1,16 +1,16 @@
 META_INFO = {
 	"NECKLINE" : {
-				"PATH" : '/model_h5/neckline.h5',
+				"PATH" : "/ddrive1116/Production/models/neckline1_sig.h5",
 				"TAGS" : ['key hole neckline', 'halter neck', 'boat neck', 'sweetheart neck', 'mandarin collar', 'cowl neck', 'round neck', 'square neck', 'shirt collar', 'v-neck'],
 				"TYPE" : 'keras'
 	},
 	"DESIGN_STYLING" : {
-				"PATH" : '/model_h5/neckline.h5',
+				"PATH" : "/ddrive1116/Production/models/ds_sig.h5",
 				"TAGS" : ['Layered', 'Tiered', 'Empire', 'Regular', 'Panelled', 'High Slit', 'Angrakha', 'Pleated'],
 				"TYPE" : 'keras'
 	},
 	"KURTA_LENGTH" : {
-				"PATH" : '/model_h5/neckline.h5',
+				"PATH" : "/ddrive1116/Production/models/myntra_kurta_length_knee_calf_ankle.h5",
 				"TAGS" : ['knee_length', 'calf_length', 'ankle_length'],
 				"TYPE" : 'keras'
 	},
@@ -25,12 +25,12 @@ META_INFO = {
 				"TYPE" : 'keras'
 	},
 	"PRINTS" : {
-				"PATH" : '/model_h5/neckline.h5',
+				"PATH" : "/ddrive1116/Production/models/pset13_sig.h5",
 				"TAGS" : [''],
 				"TYPE" : 'keras'
 	},
 	"SLITS" : {
-				"PATH" : '/model_h5/neckline.h5',
+				"PATH" : "/ddrive1116/Production/models/myntra_kurta_slits.h5",
 				"TAGS" :  ['multiple_slits', 'no_slit', 'front_slit']	,
 				"TYPE" : 'keras'
 	},
