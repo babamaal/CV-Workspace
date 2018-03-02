@@ -7,7 +7,7 @@ import numpy as np
 from keras.applications.imagenet_utils import preprocess_input
 import time
 from model_meta.meta_file import *
-from cv_settings import *
+from settings.cv_settings import *
 
 def convert_keras_models_to_json(model_dir):
 	model_paths =  os.listdir(model_dir)
