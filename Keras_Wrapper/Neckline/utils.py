@@ -1,7 +1,6 @@
 from model_meta.meta_file import *
 import os
 os.environ['PATH'] = "/home/ubuntu/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-8.0/bin:/snap/bin:/usr/local/cuda-8.0/bin:/home/ubuntu/codes/caffe/build/tools:/usr/local/cuda-8.0/bin:/usr/local/cuda-8.0/lib64"
-from keras.applications.resnet50 import ResNet50
 from keras.preprocessing import image
 from keras.models import Sequential, Model
 from keras.applications.imagenet_utils import preprocess_input, decode_predictions
