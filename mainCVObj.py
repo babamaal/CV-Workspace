@@ -22,7 +22,7 @@ class GlobalCVObj(object):
         self.neckline = NeckCVObj()
         self.design_styling = DSCVObj()
         #self.hemline = HemCVObj()
-        self.kurta_length = KLCVObj()
+        #self.kurta_length = KLCVObj()
         #self.kurta_shape = KSCVObj()
         #self.pattern_coverage = PCCVObj()
         #self.patterns = PatCVObj()
