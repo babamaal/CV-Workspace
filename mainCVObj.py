@@ -23,7 +23,7 @@ class GlobalCVObj(object):
         self.design_styling = DSCVObj()
         #self.hemline = HemCVObj()
         self.kurta_length = KLCVObj()
-        self.kurta_shape = KSCVObj()
+        #self.kurta_shape = KSCVObj()
         #self.pattern_coverage = PCCVObj()
         #self.patterns = PatCVObj()
         self.prints = PrintCVObj()
@@ -36,6 +36,7 @@ class GlobalCVObj(object):
         final_pred = {}
         #### Specific to neckline########
         neck_roi_pth = get_neck_roi(img_pth)
+        print neck_roi_pth
         pred, debug = self.neckline.classify_for_image(neck_roi_pth)
         final_pred['Neckline'] = pred
         #####Add more objects here#######
