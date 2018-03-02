@@ -15,7 +15,7 @@ class KLCVObj(object):
     	## Input pre processing here : 
     	roi_flag = check_if_ankle_joint_present('http://' + MACHINE_IP + img_pth)
     	if roi_flag:
-    		predictions = 'Short Sleeve'
+    		predictions = 'Short Length'
     		temp = {}
     		return predictions, temp
 		d = prepare_input_for_model(img_pth)
