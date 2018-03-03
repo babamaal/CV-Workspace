@@ -21,6 +21,7 @@ def download_images_from_csv(csv_path):
 
 
 def main(skip=0):
+    #datetime
     out = {}
     if skip != 0:
         out = json.load(open(OUTPUT_JSON_PATH, 'r'))

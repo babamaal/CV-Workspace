@@ -119,7 +119,7 @@ DEFINED_ROI = {
 def convert_pose_network_output(json_path):
     temp = json_path
     if len(temp['people']) < 1:
-        return False
+        return {}
     key_points = temp['people'][0]['pose_keypoints']
     fmt_key_points = []
     count = 0
@@ -137,6 +137,7 @@ def convert_pose_network_output(json_path):
 
 
 def check_ankle(final_ret):
-    if final_ret['LAnkle'][0] != 0.0:
-        return True
+    if 'LAnkle' in final_ret:
+        if final_ret['LAnkle'][0] != 0.0:
+            return True
     return False
