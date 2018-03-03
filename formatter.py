@@ -12,7 +12,7 @@ def run():
             bv = ''
             bv = bv + 'http://' + MACHINE_IP + k + ';;'
             for tc in temp[k].keys():
-                bv = bv + ';' + temp[k][tc] + ';'
+                bv = bv + ';' + temp[k][tc]
             bv = bv + '\n'
             print bv
             outfile.write(bv)
