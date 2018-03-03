@@ -4,6 +4,7 @@ from mainCVObj import GlobalCVObj
 import json
 import urllib
 from settings.cv_settings import *
+from tqdm import tqdm
 
 
 def download_images_from_csv(csv_path):
@@ -21,7 +22,7 @@ def download_images_from_csv(csv_path):
 
 
 def main(skip=0):
-    #datetime
+    # datetime
     out = {}
     if skip != 0:
         out = json.load(open(OUTPUT_JSON_PATH, 'r'))
@@ -41,11 +42,11 @@ def main(skip=0):
         count = 0
     else:
         count = skip
-    for l in range(len(files)):
-        f = files[l]
+    for l in tqdm(range(len(files), ncols = 70):
+        f=files[l]
         if l > count:
-            pred = gco.make_prediction_for_one_image(f)
-            out[f] = pred
+            pred=gco.make_prediction_for_one_image(f)
+            out[f]=pred
             count += 1
             print "Done with : ", count
     json.dump(out, open(OUTPUT_JSON_PATH, 'w'))

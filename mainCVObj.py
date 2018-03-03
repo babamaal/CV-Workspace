@@ -44,44 +44,31 @@ class GlobalCVObj(object):
                 pred, debug = self.neckline.classify_for_image(img_pth)
                 final_pred['Neckline'] = pred
         except:
-            pass
+            print "Failed for Neckline"
         #####Add more objects here#######
         try:
             pred, debug = self.design_styling.classify_for_image(img_pth)
             final_pred['Design Styling'] = pred
         except:
-            pass
+            print "Failed for DS"
 
         try:
             pred, debug = self.kurta_length.classify_for_image(img_pth)
             final_pred['Kurta Length'] = pred
         except:
-            pass
-        #pred, debug = self.pattern_coverage.classify_for_image(img_pth)
-        #final_pred['Pattern Coverage'] = pred
+            print "Failed for Kurta Length"
 
-        #pred, debug = self.patterns.classify_for_image(img_pth)
-        #final_pred['Patterns'] = pred
-
-        #pred, debug = self.prints.classify_for_image(img_pth)
-        #final_pred['Prints'] = pred
-
-        #pred , debug = self.sleeve_length.classify_for_image(img_pth)
-        #final_pred['Sleeve Length'] = pred
-
-        #pred , debug = self.sleeve_styling.classify_for_image(img_pth)
-        #final_pred['Sleeve Styling'] = pred
         try:
             pred, debug = self.slits.classify_for_image(img_pth)
             final_pred['Slits'] = pred
         except:
-            pass
+            print "Failed for Slits"
 
         try:
             pred = self.pytorch.classify_for_image(img_pth)
             for i in pred.keys():
                 final_pred[i] = pred[i]
         except:
-            pass
+            print "Failed for Pyt"
 
         return final_pred
