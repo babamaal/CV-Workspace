@@ -15,7 +15,8 @@ class KLCVObj(object):
     def classify_for_image(self,img_pth):
         # Input pre processing here :
         roi_flag = check_if_ankle_joint_present(img_pth)
-        if roi_flag:
+        print "ROI_FLAG" , roi_flag
+        if not roi_flag:
             predictions = 'Short Length'
             temp = {}
             return predictions, temp
