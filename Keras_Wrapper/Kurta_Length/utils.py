@@ -136,5 +136,5 @@ def convert_pose_network_output(json_path):
 
 def check_ankle(final_ret):
     if final_ret['LAnkle'][0] != 0.0:
-        return true
-    return false
+        return True
+    return False
