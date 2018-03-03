@@ -25,7 +25,7 @@ class GlobalCVObj(object):
         self.kurta_length = KLCVObj()
         #self.pattern_coverage = PCCVObj()
         #self.patterns = PatCVObj()
-        self.prints = PrintCVObj()
+        #self.prints = PrintCVObj()
         #self.sleeve_length = SLCVObj()
         #self.sleeve_styling = SSCVObj()
         self.slits = SlitCVObj()
@@ -47,7 +47,7 @@ class GlobalCVObj(object):
         final_pred['Design Styling'] = pred
 
         pred, debug = self.kurta_length.classify_for_image(img_pth)
-        #final_pred['Kurta Length'] = pred
+        final_pred['Kurta Length'] = pred
 
         #pred, debug = self.pattern_coverage.classify_for_image(img_pth)
         #final_pred['Pattern Coverage'] = pred
@@ -55,8 +55,8 @@ class GlobalCVObj(object):
         #pred, debug = self.patterns.classify_for_image(img_pth)
         #final_pred['Patterns'] = pred
 
-        pred, debug = self.prints.classify_for_image(img_pth)
-        final_pred['Prints'] = pred
+        #pred, debug = self.prints.classify_for_image(img_pth)
+        #final_pred['Prints'] = pred
 
         #pred , debug = self.sleeve_length.classify_for_image(img_pth)
         #final_pred['Sleeve Length'] = pred
