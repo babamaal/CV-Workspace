@@ -2,6 +2,7 @@ from settings.cv_settings import *
 import os
 import json
 
+output = ['hemline','placement','Kurta Length','sleeve_style','Neckline','shape','sleeve_length','Slits','print','Design Styling']
 
 def run():
     t = OUTPUT_JSON_PATH
@@ -11,8 +12,11 @@ def run():
         for k in temp.keys():
             bv = ''
             bv = bv + 'http://' + MACHINE_IP + k + ';;'
-            for tc in temp[k].keys():
-                bv = bv + ';' + temp[k][tc]
+            for tc in output:
+                if tc in temp[k]:
+                    bv = bv + ';' + temp[k][tc]
+                else:
+                    bv = bv + ';' + '   '
             bv = bv + '\n'
             print bv
             outfile.write(bv)
