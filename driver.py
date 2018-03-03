@@ -27,9 +27,10 @@ def main(skip=0):
     # Initialize GLOBAL CV OBJ
     gco = GlobalCVObj()
     inp_file = os.listdir(INPUT_CSV_PATH)[0]
-    dwn_flag = download_images_from_csv(inp_file)
-    if not dwn_flag:
-        return "SOMETHING WENT WRONG WHILE DOWNLOADING IMAGES, PLEASE RESTART!"
+    if len(os.listdir(IMAGE_DATA_SAVE_PATH)) == 0:
+        dwn_flag = download_images_from_csv(inp_file)
+        if not dwn_flag:
+            return "SOMETHING WENT WRONG WHILE DOWNLOADING IMAGES, PLEASE RESTART!"
     files = [os.path.join(IMAGE_DATA_SAVE_PATH, i)
              for i in os.listdir(IMAGE_DATA_SAVE_PATH)]
     if skip == 0:
