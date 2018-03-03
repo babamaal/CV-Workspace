@@ -13,4 +13,5 @@ def run():
             for tc in temp[k].keys():
                 bv = bv + tc + ';' + temp[k][tc] + ';'
             bv = bv + '/n'
+            outfile.write(bv)
     return OUTPUT_CSV
