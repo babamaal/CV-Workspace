@@ -40,7 +40,7 @@ def main(skip=0):
         count = 0
     else:
         count = skip
-    for l in range(files):
+    for l in range(len(files)):
         f = files[l]
         if l > count:
             pred = gco.make_prediction_for_one_image(f)
