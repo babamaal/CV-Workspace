@@ -26,7 +26,10 @@ def main(skip=0):
         out = json.load(open(OUTPUT_JSON_PATH, 'r'))
     # Initialize GLOBAL CV OBJ
     gco = GlobalCVObj()
-    inp_file = os.listdir(INPUT_CSV_PATH)[0]
+    try:
+        inp_file = os.listdir(INPUT_CSV_PATH)[0]
+    except:
+        print "CSV NOT IN PATH || DATA ALREADY THERE!!"
     if len(os.listdir(IMAGE_DATA_SAVE_PATH)) == 0:
         dwn_flag = download_images_from_csv(inp_file)
         if not dwn_flag:
