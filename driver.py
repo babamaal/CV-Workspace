@@ -48,6 +48,6 @@ def main(skip=0):
             pred = gco.make_prediction_for_one_image(f)
             out[f] = pred
             count += 1
-            print "Done with : ", count
+            #print "Done with : ", count
     json.dump(out, open(OUTPUT_JSON_PATH, 'w'))
     return "DONE WITH THE CSV!!!"
