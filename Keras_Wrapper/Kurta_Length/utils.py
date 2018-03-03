@@ -19,6 +19,7 @@ from keras import backend as K
 from datetime import datetime
 from settings.cv_settings import *
 
+
 def prepare_input_for_model(path_to_image):
     if not os.path.isfile(path_to_image):
         return "Incorrect file path"
@@ -68,7 +69,7 @@ def check_if_ankle_joint_present(img_pth):
     t_r = os.listdir(POSE_NETWORK_OUTPUT)
     fname = img_pth.split('/')[-1].split('.')[0]
     json_name = fname + '_keypoints.json'
-    t = json.load(open(os.path.join(POSE_NETWORK_OUTPUT,json_name),'r'))
+    t = json.load(open(os.path.join(POSE_NETWORK_OUTPUT, json_name), 'r'))
     ############# check if ankle join present in response obj ###############
     g = convert_pose_network_output(t)
     return check_ankle(g)
@@ -134,6 +135,6 @@ def convert_pose_network_output(json_path):
 
 
 def check_ankle(final_ret):
-    if final_ret['LAnkle'][0] ! = 0.0:
+    if final_ret['LAnkle'][0] != 0.0:
         return true
     return false
