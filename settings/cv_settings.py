@@ -8,3 +8,4 @@ MODEL_PATH = '/ddrive1116/Production/models'
 MACHINE_IP = '52.168.34.57'
 ROI_SERVER = 'tcp://52.191.199.3:5555'
 PYTORCH_SERVER = "tcp://40.71.219.191:5555"
+OUTPUT_CSV = "/ddrive1116/Production/csv_output/"
