@@ -46,12 +46,17 @@ class GlobalCVObj(object):
         except:
             pass
         #####Add more objects here#######
-        pred, debug = self.design_styling.classify_for_image(img_pth)
-        final_pred['Design Styling'] = pred
+        try:
+            pred, debug = self.design_styling.classify_for_image(img_pth)
+            final_pred['Design Styling'] = pred
+        except:
+            pass
 
-        pred, debug = self.kurta_length.classify_for_image(img_pth)
-        final_pred['Kurta Length'] = pred
-
+        try:
+            pred, debug = self.kurta_length.classify_for_image(img_pth)
+            final_pred['Kurta Length'] = pred
+        except:
+            pass
         #pred, debug = self.pattern_coverage.classify_for_image(img_pth)
         #final_pred['Pattern Coverage'] = pred
 
@@ -66,12 +71,17 @@ class GlobalCVObj(object):
 
         #pred , debug = self.sleeve_styling.classify_for_image(img_pth)
         #final_pred['Sleeve Styling'] = pred
+        try:
+            pred, debug = self.slits.classify_for_image(img_pth)
+            final_pred['Slits'] = pred
+        except:
+            pass
 
-        pred, debug = self.slits.classify_for_image(img_pth)
-        final_pred['Slits'] = pred
-
-        pred = self.pytorch.classify_for_image(img_pth)
-        for i in pred.keys():
-            final_pred[i] = pred[i]
+        try:
+            pred = self.pytorch.classify_for_image(img_pth)
+            for i in pred.keys():
+                final_pred[i] = pred[i]
+        except:
+            pass
 
         return final_pred
