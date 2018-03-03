@@ -72,7 +72,9 @@ def check_if_ankle_joint_present(img_pth):
     t = json.load(open(os.path.join(POSE_NETWORK_OUTPUT, json_name), 'r'))
     ############# check if ankle join present in response obj ###############
     g = convert_pose_network_output(t)
-    return check_ankle(g)
+    if not g:
+        return check_ankle(g)
+    return False
 
 
 BODY_PART_DICT = {
