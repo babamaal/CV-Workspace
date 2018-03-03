@@ -36,10 +36,10 @@ class GlobalCVObj(object):
         #### Specific to neckline########
         neck_roi_pth = get_neck_roi(img_pth)
         print neck_roi_pth
-        try:
+        if os.path.exists(neck_roi_pth):
             pred, debug = self.neckline.classify_for_image(neck_roi_pth)
             final_pred['Neckline'] = pred
-        except:
+        else:
             pred, debug = self.neckline.classify_for_image(img_pth)
             final_pred['Neckline'] = pred
         #####Add more objects here#######
