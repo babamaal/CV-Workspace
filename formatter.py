@@ -69,6 +69,7 @@ tag_map = {
         "cold-shoulder-sleeves": "Cold-Shoulder Sleeves",
         "no-sleeves": "No Sleeves",
         "strap": "Shoulder Straps",
+        "roll-up-sleeves": "Roll-Up Sleeves"
     },
     'Shape': {
         "Anarkali": "Anarkali",
