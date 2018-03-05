@@ -2,8 +2,7 @@ from settings.cv_settings import *
 import os
 import json
 
-output = ['hemline', 'placement', 'Kurta Length', 'sleeve_style', 'Neckline',
-          'shape', 'sleeve_length', 'Slits', 'print', 'Design Styling', 'yoke']
+output = ['hemline', 'placement', 'Kurta Length', 'sleeve_style', 'Neckline','shape', 'sleeve_length', 'Slits', 'print', 'Design Styling', 'yoke']
 keys = {
     'hemline': 'Hemline',
     'placement': 'Pattern Coverage',
@@ -92,14 +91,14 @@ tag_map = {
         "flared": "Flared",
     },
     'Design Styling': {
-        "Angrakha": "Angrakha",
-        "Empire": "Empire",
-        "Tiered": "Tiered",
-        "Regular": "Regular",
-        "Panelled": "Panelled",
-        "Pleated": "Pleated",
-        "High Slit": "High Slit",
-        "Layered": "Layered",
+        "angrakha": "Angrakha",
+        "empire": "Empire",
+        "tiered": "Tiered",
+        "regular": "Regular",
+        "panelled": "Panelled",
+        "pleated": "Pleated",
+        "high Slit": "High Slit",
+        "layered": "Layered",
     },
     'Pattern Coverage': {
         "placement-print": "Placement Print",
