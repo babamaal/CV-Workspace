@@ -103,6 +103,10 @@ tag_map = {
         "placement-print": "Placement Print",
         "all-over-print": "All Over Print",
         "solid": "No Prints"
+    },
+    'Pattern': {
+        'Yoke': 'Yoke Design',
+        'No Yoke': 'none'
     }
 }
 
