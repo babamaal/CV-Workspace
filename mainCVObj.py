@@ -71,4 +71,4 @@ class GlobalCVObj(object):
         except:
             print "Failed for Pyt"
         #temp  = format_final_results_as_per_myntra_tags(final_pred)
-        return temp
+        return final_pred
