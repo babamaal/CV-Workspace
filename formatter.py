@@ -37,6 +37,7 @@ tag_map = {
         "Quirky": "Quirky",
         "Ethnic Motifs": "Ethnic Motifs",
         "Embellished": "Embellished",
+        "Shibori" : 'Dyed'
     },
     'Slit Details': {
         "front_slit": "Front Slit",
