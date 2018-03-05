@@ -13,7 +13,7 @@ keys = {
     'sleeve_length': 'Sleeve Length',
     'Slits': 'Slit Details',
     'print': 'Print/Pattern Type',
-    'Design Styling': 'Design Styling',
+    'design_style': 'Design Styling',
     'yoke': 'Pattern'
 }
 
@@ -90,7 +90,7 @@ tag_map = {
         "asymmetric": "Asymmetric",
         "flared": "Flared",
     },
-    'design_style': {
+    'Design Styling': {
         "angrakha": "Angrakha",
         "empire": "Empire",
         "tiered": "Tiered",
