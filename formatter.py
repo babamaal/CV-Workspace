@@ -2,7 +2,110 @@ from settings.cv_settings import *
 import os
 import json
 
-output = ['hemline','placement','Kurta Length','sleeve_style','Neckline','shape','sleeve_length','Slits','print','Design Styling']
+output = ['hemline', 'placement', 'Kurta Length', 'sleeve_style', 'Neckline',
+          'shape', 'sleeve_length', 'Slits', 'print', 'Design Styling', 'yoke']
+keys = {
+    'hemline': 'Hemline',
+    'placement': 'Pattern Coverage',
+    'Kurta Length': 'Length',
+    'sleeve_style': 'Sleeve Styling',
+    'Neckline': 'Neck',
+    'shape': 'Shape',
+    'sleeve_length': 'Sleeve Length',
+    'Slits': 'Slit Details',
+    'print': 'Print/Pattern Type',
+    'Design Styling': 'Design Styling',
+    'yoke': 'Pattern'
+}
+
+tag_map = {
+    'Print/Pattern Type': {
+        "Striped": "Striped",
+        "Solid": "Solid",
+        "Checked": "Checked",
+        "Woven Design": "Woven Design",
+        "Animal": "Animal",
+        "Tribal": "Tribal",
+        "Bandhani": "Bandhani",
+        "Floral": "Floral",
+        "Geometric": "Geometric",
+        "Paisley": "Paisley",
+        "Abstract": "Abstract",
+        "Leheriya": "Leheriya",
+        "Chevron": "Chevron",
+        "Colourblocked": "Colourblocked",
+        "Quirky": "Quirky",
+        "Ethnic Motifs": "Ethnic Motifs",
+        "Embellished": "Embellished",
+    },
+    'Slit Details': {
+        "front_slit": "Front Slit",
+        "multiple_slits": "Multiple Slits",
+        "no_slit": ''
+    },
+    'Sleeve Length': {
+        "long-sleeves": "Long Sleeves",
+        "short-sleeves": "Short Sleeves",
+        "sleeveless": "Sleeveless",
+        "three-fourth-sleeves": "Three-Quarter Sleeves",
+    },
+    'Neck': {
+        'v-neck': "V-Neck",
+        'round neck': "Round Neck",
+        'boat neck': "Boat Neck",
+        'halter neck': "Halter Neck",
+        'mandarin collar': "Mandarin Collar",
+        'shirt collar': "Shirt Collar",
+        'square neck': "Square Neck",
+        'cowl neck': "Cowl Neck",
+        'key hole neckline': "Keyhole Neck",
+        'sweetheart neck': "Sweetheart Neck",
+    },
+    'Sleeve Styling': {
+        "cap-sleeves": "Cap Sleeves",
+        "puff-sleeves": "Puff Sleeves",
+        "flared-sleeves": "Flared Sleeves",
+        "regular-sleeves": "Regular Sleeves",
+        "cold-shoulder-sleeves": "Cold-Shoulder Sleeves",
+        "no-sleeves": "No Sleeves",
+        "strap": "Shoulder Straps",
+    },
+    'Shape': {
+        "Anarkali": "Anarkali",
+        "Straight": "Straight",
+        "A_Line": "A-Line",
+        "KAftan": "Kaftan",
+    },
+    'Length': {
+        "knee_length": "Knee Length",
+        "calf_length": "Calf Length",
+        "ankle_length": "Ankle Length",
+        "Short Length": "Above Knee",
+    },
+    'Hemline': {
+        "high-low": "High-Low",
+        "straight": "Straight",
+        "curved": "Curved",
+        "asymmetric": "Asymmetric",
+        "flared": "Flared",
+    },
+    'Design Styling': {
+        "Angrakha": "Angrakha",
+        "Empire": "Empire",
+        "Tiered": "Tiered",
+        "Regular": "Regular",
+        "Panelled": "Panelled",
+        "Pleated": "Pleated",
+        "High Slit": "High Slit",
+        "Layered": "Layered",
+    },
+    'Pattern Coverage': {
+        "placement-print": "Placement Print",
+        "all-over-print": "All Over Print",
+        "solid": "No Prints"
+    }
+}
+
 
 def run():
     t = OUTPUT_JSON_PATH
@@ -14,7 +117,7 @@ def run():
             bv = bv + 'http://' + MACHINE_IP + k + ';;'
             for tc in output:
                 if tc in temp[k]:
-                    bv = bv + ';' + temp[k][tc]
+                    bv = bv + ';' + tag_map[keys[tc]][temp[k][tc]]
                 else:
                     bv = bv + ';' + '   '
             bv = bv + '\n'

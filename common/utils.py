@@ -66,3 +66,4 @@ def get_tags_from_meta(model_name):
 def get_neck_roi(img_pth):
 	fn = img_pth.split('/')[-1] + '.jpg'
 	return os.path.join(ROI_SAVE_PATH_NECK, fn)
+

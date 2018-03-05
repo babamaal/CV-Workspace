@@ -20,7 +20,7 @@ class GlobalCVObj(object):
     def __init__(self):
         # Add your objects here.. repalce the ones coming from pytorch with PYTObj
         self.neckline = NeckCVObj()
-        self.design_styling = DSCVObj()
+        #self.design_styling = DSCVObj()
         #self.hemline = HemCVObj()
         self.kurta_length = KLCVObj()
         #self.pattern_coverage = PCCVObj()
@@ -46,11 +46,11 @@ class GlobalCVObj(object):
         except:
             print "Failed for Neckline"
         #####Add more objects here#######
-        try:
-            pred, debug = self.design_styling.classify_for_image(img_pth)
-            final_pred['Design Styling'] = pred
-        except:
-            print "Failed for DS"
+        #try:
+        #    pred, debug = self.design_styling.classify_for_image(img_pth)
+        #    final_pred['Design Styling'] = pred
+        #except:
+        #    print "Failed for DS"
 
         try:
             pred, debug = self.kurta_length.classify_for_image(img_pth)
@@ -70,5 +70,5 @@ class GlobalCVObj(object):
                 final_pred[i] = pred[i]
         except:
             print "Failed for Pyt"
-
-        return final_pred
+        #temp  = format_final_results_as_per_myntra_tags(final_pred)
+        return temp
